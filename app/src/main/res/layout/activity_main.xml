@@ -23,24 +23,24 @@
                 android:orientation="horizontal">
                 <ImageView
                     android:layout_weight="1"
-                    android:layout_width="20dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="60dp"
-                    android:src="@drawable/online_shopping"/>
+                    android:src="@drawable/ic_shopping_kart"/>
                 <ImageView
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_wallet"/>
                 <ImageView
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_social"/>
                 <ImageView
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_google"/>
 
             </LinearLayout>
         </android.support.v7.widget.Toolbar>
