@@ -10,10 +10,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+
+import static android.R.id.progress;
 
 public class MainActivity extends AppCompatActivity {
     ImageView socialImageView;
@@ -21,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView shoppingImageView;
     ImageView googleImageView;
     WebView webView;
-
+    ProgressBar progressBar;
+    ImageView moveTopImageView;
 
 
     @Override
@@ -35,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         shoppingImageView=(ImageView)findViewById(R.id.shopping_id);
         googleImageView=(ImageView)findViewById(R.id.google_id);
         webView=(WebView)findViewById(R.id.webViewId);
+        moveTopImageView=(ImageView)findViewById(R.id.move_top_id);
 
         //enable web view client for loading in webview itself
         webView.setWebViewClient(new WebViewClient());
@@ -47,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Set on Click listener for google imageview
         googleImageView.setOnClickListener(googleClickListener);
+        moveTopImageView.setOnClickListener(moveTopClickListener);
 
     }
     View.OnClickListener googleClickListener=new View.OnClickListener() {
@@ -56,18 +63,27 @@ public class MainActivity extends AppCompatActivity {
             webView.loadUrl("http://www.google.co.in");
         }
     };
+    View.OnClickListener moveTopClickListener=new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            //web page to initial state
+            webView.scrollTo(0,0);
+        }
+    };
     public  void handleWebSettings()
     {
         WebSettings webSettings=webView.getSettings();
         webView.getSettings().setJavaScriptEnabled(true);
-        webSettings.setJavaScriptEnabled(true);
         webSettings.setBuiltInZoomControls(true);
         webSettings.setPluginState(WebSettings.PluginState.ON_DEMAND);
         webSettings.setSupportZoom(true);
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
         webSettings.setAllowFileAccess(true);
         webSettings.setDomStorageEnabled(true);
+        webSettings.setUseWideViewPort(true);
+        webSettings.setLoadWithOverviewMode(true);
     }
+
     //Handle back button to back back to previous web page in web view
     @Override
     public void onBackPressed() {
@@ -76,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
             if(webView.canGoBack())
             {
                 webView.goBack();
+                return;
             }
         }
         super.onBackPressed();
@@ -101,4 +118,6 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
 
     }
+
 }
+
