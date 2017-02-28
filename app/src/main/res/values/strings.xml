@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">Browser</string>
+    <string-array name="navigation_shopping">
+        <item>Flipkart</item>
+        <item>Amazon</item>
+        <item>Snapdeal</item>
+        <item>Paytm</item>
+        <item>Myntra</item>
+    </string-array>
+    <string-array name="navigation_shopping_links">
+        <item>https://www.flipkart.com/</item>
+        <item>http://www.amazon.in/</item>
+        <item>https://www.snapdeal.com/</item>
+        <item>https://paytm.com/</item>
+        <item>http://www.myntra.com/</item>
+    </string-array>
+    <string-array name="navigation_wallet">
+        <item>PayTM</item>
+        <item>Freecharge</item>
+        <item>Mobikwik</item>
+        <item>Oxigen</item>
+    </string-array>
+    <string-array name="navigation_wallet_links">
+        <item>https://paytm.com/</item>
+        <item>https://www.freecharge.in/desktop/</item>
+        <item>https://www.mobikwik.com/</item>
+        <item>https://www.oxigenwallet.com/</item>
+    </string-array>
+    <string-array name="navigation_social">
+        <item>Facebook</item>
+        <item>Instagram</item>
+        <item>YouTube</item>
+        <item>Linkedin</item>
+        <item>Twitter</item>
+    </string-array>
+    <string-array name="navigation_social_links">
+        <item>https://www.facebook.com/</item>
+        <item>https://www.instagram.com/</item>
+        <item>https://www.youtube.com/</item>
+        <item>https://www.linkedin.com/</item>
+        <item>https://twitter.com/</item>
+    </string-array>
 </resources>
