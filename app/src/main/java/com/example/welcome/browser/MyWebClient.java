@@ -31,13 +31,17 @@ public class MyWebClient extends WebViewClient {
          * If pdf append google doc services
          * will open in pdf reader if installed any
          */
+        Log.i("thisthis",url);
         if(url.endsWith("pdf"))
         {
             try {
                 String pdf = url;
-                Log.i("pdfpdf",url);
+                Log.i("thisthispdf",url);
                 Toast.makeText(context,"Download is in progress",Toast.LENGTH_SHORT).show();
-                view.loadUrl(String.format("http://docs.google.com/viewer?url=%s", url));
+                //view.loadUrl(String.format("http://docs.google.com/?embedded=trueurl=%s", url));
+
+                String doc=String.format("<iframe src='http://docs.google.com/viewer?url=%s&embedded=true' width='100%' height='100%'  style='border: none;'></iframe>",url);
+                view.loadData(doc, "text/html", "UTF-8");
             }
             catch (ActivityNotFoundException e)
             {
@@ -46,7 +50,7 @@ public class MyWebClient extends WebViewClient {
         }
         else
         {
-            Log.i("pdfrtrtrtf",url);
+            Log.i("thisthisis",url);
             view.loadUrl(url);
         }
         return true;

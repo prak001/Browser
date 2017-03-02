@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/MainLayout"
     tools:context="com.example.welcome.browser.MainActivity">
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/AppBarlayout"
         >
         <android.support.v7.widget.Toolbar
+            app:layout_scrollFlags="scroll"
             android:id="@+id/appBarToolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,31 +30,47 @@
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
+                    android:id="@+id/shopping_id"
                     android:src="@drawable/ic_shopping_kart"/>
                 <ImageView
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
+                    android:id="@+id/wallet_id"
                     android:src="@drawable/ic_wallet"/>
                 <ImageView
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
+                    android:id="@+id/social_id"
                     android:src="@drawable/ic_social"/>
                 <ImageView
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
+                    android:id="@+id/google_id"
                     android:src="@drawable/ic_google"/>
 
             </LinearLayout>
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
     <WebView
         android:layout_weight="10"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/webViewId">
-
     </WebView>
-</LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_move_top"
+        android:id="@+id/move_top_id"
+        android:layout_gravity="bottom|right"/>
+    </android.support.design.widget.CoordinatorLayout>
+    <include layout="@layout/navigation_drawer"/>
+</android.support.v4.widget.DrawerLayout>

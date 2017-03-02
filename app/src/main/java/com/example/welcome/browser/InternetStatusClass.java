@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,25 +22,18 @@ public class InternetStatusClass extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
+        //Connectivity manager for handling internet connectivity changes
         ConnectivityManager connectivityManager=(ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo=connectivityManager.getActiveNetworkInfo();
 
-        View view = View.inflate(context, R.layout.activity_main, null);
+        //If network if not null and conected
         if(networkInfo!=null && networkInfo.isConnected())
         {
-
-            /*Snackbar.make(view.findViewById(R.id.MainLayout),"Connected to Internet",Snackbar.LENGTH_SHORT)
-                    .setActionTextColor(Color.WHITE)
-                    .show();*/
-            Toast.makeText(context,"Connected",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context,"Connected",Toast.LENGTH_SHORT).show();
         }
         else
         {
-
-            /*Snackbar.make(view.findViewById(R.id.MainLayout),"Check Your Internet Connection",Snackbar.LENGTH_SHORT)
-                    .setActionTextColor(Color.RED)
-                    .show();*/
-            Toast.makeText(context,"Not Connected",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context,"Not Connected",Toast.LENGTH_SHORT).show();
 
         }
 

@@ -64,6 +64,7 @@ public class CustomAdapterNavigationList extends BaseAdapter{
             @Override
             public void onClick(View v) {
                 //Drawer will be closed and url will be called
+                
                 drawerLayout.closeDrawers();
                 webView.loadUrl(commonLinkList[position]);
 

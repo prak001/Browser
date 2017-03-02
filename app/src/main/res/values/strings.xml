@@ -5,14 +5,14 @@
         <item>Amazon</item>
         <item>Snapdeal</item>
         <item>Paytm</item>
-        <item>Myntra</item>
+
     </string-array>
     <string-array name="navigation_shopping_links">
         <item>https://www.flipkart.com/</item>
         <item>http://www.amazon.in/</item>
         <item>https://www.snapdeal.com/</item>
         <item>https://paytm.com/</item>
-        <item>http://www.myntra.com/</item>
+
     </string-array>
     <string-array name="navigation_wallet">
         <item>PayTM</item>
